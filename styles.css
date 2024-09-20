@@ -1,7 +1,7 @@
 /*Variables*/
 :root {
     --sidebar: var(--dark-green);
-    --main-content: ;
+    --main-content: #f9f9f9;
     --dark-green: #022213;
     --light-green: #aede34;
     --gray: #d8d9c7;
@@ -102,8 +102,12 @@ a {
         }
     }
 
-    & .btm-right {
+    & .btm-right{
         align-self: center;
+        & ul {
+            display: flex;
+            justify-content: space-around;
+        }
     }
 }
 
@@ -134,10 +138,29 @@ a {
 .user-small, .user-big {
     display: inline-block;
     border-radius: 50%;
-    background-image: url(icons/user-icon.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+}
+
+.one {
+    background-image: url(icons/user-icon.jpg);
+}
+
+.two {
+    background-image: url(icons/two.svg);
+}
+
+.three {
+    background-image: url(icons/three.svg);
+}
+
+.four {
+    background-image: url(icons/four.svg);
+}
+
+.five {
+    background-image: url(icons/five.svg);
 }
 
 .user-small {
@@ -154,11 +177,16 @@ button {
     cursor: pointer;
     color: white;
     background-color: var(--primary);
+    min-width: 120px;
     font-size: 1.25rem;
     font-weight: 600;
     padding: 8px 32px;
     border: none;
     border-radius: 50px;
+
+    &:hover {
+        background-color: var(--dark-green);
+    }
 }
 
 .sidebar {
@@ -249,6 +277,7 @@ button {
     grid-area: 2 / 2 / 3 / 3;
     display: grid;
     grid-template: 1fr 1fr / 7fr 3fr;
+    padding: 2.5% 2.5%;
 }
 
 .projects {
@@ -266,35 +295,59 @@ button {
         display: grid;
         grid-template-rows: 4fr 1fr;
 
+        & .card-content > h3 {
+            font-weight: 700;
+            margin-block-end: 12px;
+        }
+
         & .card-icons {
             display: flex;
             justify-content: flex-end;
+            gap: 5%;
+            & li:hover {
+                cursor: pointer;
+            }
         }
     }
 }
 
 .announcements {
-    /* background-color: chocolate; */
 
     & li:not(:last-child):after {
         content: "";
         display: block;
         width: 100%;
-        margin: 10px 0px;
-        border-bottom: 1px solid black;
+        margin: 15px 0px;
+        border-bottom: 1px solid var(--gray);
     }
 
     & .card {
+        padding: 7.5% 5%;
         min-height: 70%;
+    }
+
+    & a {
+        color: var(--dark-green);
+        font-weight: 600;
+        & :hover {
+            color: var(--light-green);
+        }
+        & div {
+            margin-block-end: 8px;
+        }
+        
     }
 }
 
 .trending {
-    /* background-color: crimson; */
 
     & li {
         display: grid;
+        align-items: center;
         grid-template-columns: 1fr 9fr;
+        & div:first-child {
+            margin-inline-end: 20px;;
+        }
     }
 
     & li:not(:last-child) {
@@ -302,6 +355,7 @@ button {
     }
 
     & .card {
+        padding: 7.5% 5%;
         min-height: 70%;
     }
 }
@@ -309,5 +363,18 @@ button {
 .card {
     background: white;
     padding: 5%;
-    margin: 2.5%;
+    margin-inline-end: 5%;
+    margin-block-end: 5%;
+    border-radius: 12px;
+    border: 1px solid var(--gray);
+}
+
+.shadow {
+    border-left: 10px solid var(--light-green);
+    box-shadow: 2px 6px 5px -3px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-weight: 600;
+    padding-block-end: 16px;
 }
