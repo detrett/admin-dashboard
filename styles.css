@@ -95,7 +95,7 @@ a {
             margin-left: 2.5%;
         }
         & p:first-child {
-            font-size: 0.75rem;
+            font-size: 1rem;
         }
         & p:last-child {
             font-size: 1.5rem;
@@ -106,9 +106,25 @@ a {
         align-self: center;
         & ul {
             display: flex;
-            justify-content: space-around;
+            gap: 5%;
         }
     }
+}
+
+#github {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img {
+        width: 24px;
+        margin-inline-end: 8px;
+        vertical-align: middle;
+    }
+}
+
+.github-dark {
+    width: 24px;
+    filter: invert(66%) sepia(1%) saturate(378%) hue-rotate(314deg) brightness(95%) contrast(80%);
 }
 
 .header ul {
@@ -303,12 +319,37 @@ button {
         & .card-icons {
             display: flex;
             justify-content: flex-end;
+            align-items: flex-end;
             gap: 5%;
             & li:hover {
                 cursor: pointer;
             }
         }
     }
+}
+
+.card-content p {
+    line-height: 1.5;
+}
+
+.project-image {
+    display: inline-block;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    width: 100%;
+    min-height: 200px;
+    margin-block-end: 5%;
+}
+
+.sign-up {
+    background-image: url(images/sign-up.png);
+}
+
+.calculator {
+    background-image: url(images/calculator.png);
 }
 
 .announcements {
@@ -337,6 +378,10 @@ button {
         }
         
     }
+
+    & p {
+        line-height: 1.5;
+    }
 }
 
 .trending {
@@ -347,6 +392,16 @@ button {
         grid-template-columns: 1fr 9fr;
         & div:first-child {
             margin-inline-end: 20px;;
+        }
+        & p:first-child {
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin-block-start: 4px;
+            margin-block-end: 8px;
+            + p {
+                font-weight: 300;
+                font-size: 1rem;
+            }
         }
     }
 
