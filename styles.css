@@ -352,6 +352,10 @@ button {
     background-image: url(images/calculator.png);
 }
 
+.library {
+    background-image: url(images/library.png);
+}
+
 .announcements {
 
     & li:not(:last-child):after {
