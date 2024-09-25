@@ -356,6 +356,10 @@ button {
     background-image: url(images/library.png);
 }
 
+.tic-tac-toe {
+    background-image: url(images/tic-tac-toe.png);
+}
+
 .announcements {
 
     & li:not(:last-child):after {
